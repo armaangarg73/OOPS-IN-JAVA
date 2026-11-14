@@ -29,15 +29,34 @@ class Dog extends Animal {
     }
 }
 
+class Cat extends Animal {
+    @Override 
+    void sound() {
+        System.out.println("Cat meows");
+    } 
+}
+
 public class Inheritance {
     public static void main(String[] args) {
         // Animal animal = new Animal();
-        Animal animal = new Dog();
-        System.out.println("Animal object created: " + animal);
-        animal.sound();
+        Animal animal1 = new Dog();
+        Animal animal2 = new Cat();
 
         // Dog dog = new Dog();
         // dog.eat();
         // dog.sound();
+        // animal1.sound(); // dog barks
+        // animal2.sound(); // cat meows 
+
+        // Polymorphism
+
+        Animal[] animals = { 
+            new Dog(),
+            new Cat()
+        };
+
+        for(Animal animal: animals) {
+            animal.sound();
+        }
     }
 }
